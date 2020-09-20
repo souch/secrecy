@@ -17,10 +17,12 @@ import com.doplgangr.secrecy.filesystem.encryption.VaultHolder;
 import com.doplgangr.secrecy.filesystem.files.EncryptedFile;
 import com.doplgangr.secrecy.filesystem.encryption.Vault;
 import com.doplgangr.secrecy.R;
+import com.doplgangr.secrecy.utils.BackgroundInputStream;
 import com.doplgangr.secrecy.utils.Util;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import de.greenrobot.event.EventBus;
 import pl.droidsonroids.gif.GifDrawable;
@@ -89,6 +91,7 @@ public class FilePhotoActivity extends FragmentActivity {
             if (event.encryptedFile.getFileExtension().equals("gif")) {
                 try {
                     BufferedInputStream bis = new BufferedInputStream(event.encryptedFile.readStream());
+//                    BackgroundInputStream bis = new BackgroundInputStream(event.encryptedFile.readStream());
                     GifDrawable gif = new GifDrawable(bis);
                     event.imageView.setImageDrawable(gif);
                 } catch (IOException e) {

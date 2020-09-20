@@ -6,3 +6,7 @@ dependencies {
     compile 'com.android.support:support-v4:19.0.0'
 
 }
+
+android {
+    buildToolsVersion '25.0.0'
+}
